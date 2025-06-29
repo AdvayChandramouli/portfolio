@@ -1,16 +1,16 @@
 export const metaData = {
-  baseUrl: "https://nextfolio-template.vercel.app/",
-  title: "Advay Chandramouli",
+  baseUrl: "https://advaychandramouli.vercel.app/",
+  title: "Advay Chandramouli | Professional Portfolio",
   name: "Advay Chandramouli",
   ogImage: "/opengraph-image.png",
   description:
-    "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.",
+    "Personal portfolio built with Next.js to showcase my professional experience, technical skills, and projects in software development, AI/ML, and human-computer interaction. Deployed with Vercel for fast, responsive performance.",
 };
 
 export const socialLinks = {
   twitter: "https://x.com/advaycmouli",
   github: "https://github.com/AdvayChandramouli",
-  instagram: "https://www.instagram.com/advaychandramouli",
+  instagram: "https://www.instagram.com/advay.chandramouli",
   linkedin: "https://www.linkedin.com/in/advaychandramouli",
   email: "mailto:advaycmouli@gmail.com",
 };
