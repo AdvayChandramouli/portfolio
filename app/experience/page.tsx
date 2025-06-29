@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Experience() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium">Experience</h1>
+      <h2 className="text-2xl font-bold mb-4">Work Experience</h2>
       <div className="space-y-6">
         {experiences.map((experience, index) => (
           <article
