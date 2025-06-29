@@ -28,6 +28,10 @@ export default function Page() {
            This summer, I joined Marshall University's NSF REU in Data Analytics under Dr. Husnu Narman to research computer vision approaches for railroad infrastructure monitoring. Later this Fall, I’ll be joining Verizon’s 5G RF Engineering team in Houston, TX.
         </p>
       </div>
+      <br></br>
+
+      <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
+      at advaycmouli[at]gmail[dot]com.
     </section>
   );
 }
