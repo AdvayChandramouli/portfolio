@@ -9,6 +9,20 @@ export interface Experience {
 // Add latest experiences to top of this list
 export const experiences: Experience[] = [
     {
+        role: "5G Radio Frequency Engineering Co-Op",
+        company: "Verizon",
+        description: "Incoming Fall 2025 Co-Op",
+        start_date: "July 2025",
+        end_date: "December 2025"
+    },
+    {
+        role: "NSF Research Intern",
+        company: "Marshall University",
+        description: "NSF REU for Undergraduate Research in Data Analytics (URDA)",
+        start_date: "May 2025",
+        end_date: "July 2025"
+    },
+    {
         role: "Software Engineer Intern",
         company: "InGenius Studios",
         description: "Worked on building API data ingestion systems and CSV extraction pipelines.",
