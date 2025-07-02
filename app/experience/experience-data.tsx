@@ -11,7 +11,7 @@ export const experiences: Experience[] = [
     {
         role: "5G Radio Frequency Engineering Co-Op",
         company: "Verizon",
-        description: "Incoming Fall 2025 Co-Op",
+        description: "Incoming Fall 2025 GN&T Co-Op",
         start_date: "July 2025",
         end_date: "December 2025"
     },

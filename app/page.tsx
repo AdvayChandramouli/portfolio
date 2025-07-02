@@ -31,7 +31,7 @@ export default function Page() {
       <br></br>
 
       <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
-      at advaycmouli[at]gmail[dot]com.
+      at: advaycmouli[at]gmail[dot]com.
     </section>
   );
 }
