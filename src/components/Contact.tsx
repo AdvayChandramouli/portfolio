@@ -75,7 +75,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-20 pb-32 md:pb-40"
+      className="scroll-mt-20 pb-[45vh] md:pb-[50vh]"
       aria-labelledby="contact-heading"
     >
       <h2
