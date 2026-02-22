@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf9f6;
+  --background-light: #fdfcfb;
+  --foreground: #171717;
+  --muted: #525252;
+  --muted-light: #737373;
+  --muted-subtle: #f5f5f5;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --border: #e5e5e5;
+  --background-hover: rgba(255, 255, 255, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-accent;
+}
