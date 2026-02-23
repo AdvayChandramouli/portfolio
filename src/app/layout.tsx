@@ -11,8 +11,29 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Research & Engineering Portfolio",
+  title: "Advay Chandramouli",
+  description:
+    "Software Engineer specializing in AI/ML. Portfolio showcasing projects, research, and experience.",
+  keywords: [
+    "software engineer",
+    "AI/ML",
+    "machine learning",
+    "portfolio",
+    "Advay Chandramouli",
+  ],
+  authors: [{ name: "Advay Chandramouli", url: "https://advaychandramouli.com" }],
+  openGraph: {
+    title: "Advay Chandramouli | Software & AI/ML Engineer",
+    description:
+      "Portfolio showcasing software engineering, AI/ML projects, and research.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advay Chandramouli | Software & AI/ML Engineer",
+    description:
+      "Portfolio showcasing software engineering, AI/ML projects, and research.",
+  },
 };
 
 export default function RootLayout({
