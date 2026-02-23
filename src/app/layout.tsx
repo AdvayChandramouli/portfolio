@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Advay Chandramouli", url: "https://advaychandramouli.com" }],
   openGraph: {
-    title: "Advay Chandramouli | Software & AI/ML Engineer",
+    title: "Advay Chandramouli",
     description:
       "Portfolio showcasing software engineering, AI/ML projects, and research.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Advay Chandramouli | Software & AI/ML Engineer",
+    title: "Advay Chandramouli",
     description:
       "Portfolio showcasing software engineering, AI/ML projects, and research.",
   },
