@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
 import "./globals.css";
+import { ShiftBackground } from "@/background/ShiftBackground";
 
 const ebGaramond = EB_Garamond({
   subsets: ["latin"],
@@ -43,7 +44,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={ebGaramond.variable}>
-      <body className="font-serif min-h-screen">{children}</body>
+      <body className="font-serif min-h-screen">
+        <ShiftBackground />
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   );
 }

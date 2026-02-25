@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/background/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -21,8 +22,16 @@ const config: Config = {
         accent: {
           DEFAULT: "var(--accent)",
           hover: "var(--accent-hover)",
+          "2": "var(--accent-2)",
         },
         border: "var(--border)",
+        glass: {
+          bg: "var(--glass-bg)",
+          "bg-hover": "var(--glass-bg-hover)",
+          border: "var(--glass-border)",
+          "border-hover": "var(--glass-border-hover)",
+          shadow: "var(--glass-shadow)",
+        },
       },
       fontFamily: {
         sans: ["Helvetica", "Helvetica Neue", "Arial", "sans-serif"],
@@ -30,6 +39,9 @@ const config: Config = {
       },
       maxWidth: {
         content: "720px",
+      },
+      boxShadow: {
+        glass: "var(--glass-shadow)",
       },
     },
   },

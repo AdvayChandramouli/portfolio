@@ -15,6 +15,14 @@ export const experience: Experience[] = [
     ],
   },
   {
+    role: "Computational Bioengineering Research Assistant",
+    company: "UT Dallas - Department of Bioengineering",
+    dates: "January 2026 - Present",
+    bullets: [
+      "Multinational research on forecasting solitary fibrous tumors using Deep Learning"
+    ],
+  },
+  {
     role: "Software Development Co-Op",
     company: "Verizon",
     dates: "July 2025 - December 2025",

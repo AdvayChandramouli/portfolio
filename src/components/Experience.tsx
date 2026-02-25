@@ -17,7 +17,7 @@ export function Experience() {
         {experience.map((job) => (
           <article
             key={`${job.company}-${job.role}`}
-            className="p-6 bg-background-light border border-border rounded-lg"
+            className="p-6 bg-glass-bg backdrop-blur-md border border-glass-border rounded-xl shadow-glass transition-all duration-300 ease-out hover:bg-glass-bg-hover hover:border-glass-border-hover hover:shadow-glass hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
           >
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
               <h3 className="font-sans text-lg font-medium text-foreground">

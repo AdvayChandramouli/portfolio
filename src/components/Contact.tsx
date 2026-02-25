@@ -92,7 +92,7 @@ export function Contact() {
           "links" in card ? (
             <div
               key={card.label}
-              className="p-4 bg-background-light border border-border rounded-lg"
+              className="p-4 bg-glass-bg backdrop-blur-md border border-glass-border rounded-xl shadow-glass transition-all duration-300 ease-out hover:bg-glass-bg-hover hover:border-glass-border-hover hover:shadow-glass hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
             >
               <div className="flex justify-center mb-3 text-muted">
                 {icons[(card as { icon: keyof typeof icons }).icon]}
@@ -120,7 +120,7 @@ export function Contact() {
               href={card.href}
               target={card.external ? "_blank" : undefined}
               rel={card.external ? "noopener noreferrer" : undefined}
-              className="block p-4 bg-background-light border border-border rounded-lg transition-all duration-200 hover:border-accent/50 hover:bg-background-hover hover:shadow-sm group"
+              className="block p-4 bg-glass-bg backdrop-blur-md border border-glass-border rounded-xl shadow-glass transition-all duration-300 ease-out hover:bg-glass-bg-hover hover:border-glass-border-hover hover:shadow-glass hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 group"
             >
               <div className="flex justify-center mb-3 text-muted group-hover:text-accent transition-colors">
                 {icons[card.icon]}
