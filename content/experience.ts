@@ -6,14 +6,14 @@ export interface Experience {
 }
 
 export const experience: Experience[] = [
-  {
-    role: "Incoming Software Engineer Intern",
-    company: "Dell Technologies",
-    dates: "Summer 2026",
-    bullets: [
-      "Joining Dell ISG this summer — excited to dive into infrastructure and software at scale."
-    ],
-  },
+  // {
+  //   role: "Incoming Software Engineer Intern",
+  //   company: "Dell Technologies",
+  //   dates: "Summer 2026",
+  //   bullets: [
+  //     "Joining Dell ISG this summer — excited to dive into infrastructure and software at scale."
+  //   ],
+  // },
   {
     role: "Undergraduate Research Assistant",
     company: "UT Dallas - Department of Bioengineering",

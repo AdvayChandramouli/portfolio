@@ -6,7 +6,7 @@ export const site: SiteConfig = {
   avatar: "/headshot.jpg",
   links: {
     email: "advaycmouli@gmail.com",
-    linkedin: "https://linkedin.com/in/advaychandramouli",
+    linkedin: "https://www.linkedin.com/in/advaychandramouli/",
     github: "https://github.com/AdvayChandramouli",
     instagram: "https://instagram.com/advay.chandramouli",
     twitter: "https://twitter.com/advaycmouli",
