@@ -13,7 +13,6 @@ const SECTION_IDS = navItems.map((item) => item.id);
 
 function getActiveSection(): string | null {
   if (typeof window === "undefined") return null;
-  const scrollY = window.scrollY;
   const viewportThird = window.innerHeight / 3;
   let active: string | null = null;
   for (const id of SECTION_IDS) {
@@ -28,9 +27,7 @@ function getActiveSection(): string | null {
 
 function updateHash(sectionId: string | null) {
   if (typeof window === "undefined") return;
-  const url = sectionId
-    ? `${window.location.pathname}#${sectionId}`
-    : window.location.pathname;
+  const url = sectionId ? `${window.location.pathname}#${sectionId}` : window.location.pathname;
   history.replaceState(null, "", url);
 }
 
@@ -47,9 +44,12 @@ export function Nav() {
   }, [activeSection]);
 
   useEffect(() => {
-    setActiveSection(getActiveSection());
+    const rafId = window.requestAnimationFrame(handleScroll);
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [handleScroll]);
 
   function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {

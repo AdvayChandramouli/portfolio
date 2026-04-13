@@ -12,10 +12,19 @@ export const projects: Project[] = [
   // },
   {
     title: "BlueBlood",
-    description: "A research tool for forecasting blood biomarker changes after clinical prescription adminstration.",
-    tags: ["Python", "Time-Series Forecasting", "TensorFlow", "Keras", "AWS SageMaker", "Amazon S3", "EC2", "Google BigQuery", ],
-    links: { code: "https://github.com/vaipos/Blue-Blood-ACM-Research",
-    },
+    description:
+      "A research tool for forecasting blood biomarker changes after clinical prescription adminstration.",
+    tags: [
+      "Python",
+      "Time-Series Forecasting",
+      "TensorFlow",
+      "Keras",
+      "AWS SageMaker",
+      "Amazon S3",
+      "EC2",
+      "Google BigQuery",
+    ],
+    links: { code: "https://github.com/vaipos/Blue-Blood-ACM-Research" },
   },
   // {
   //   title: "SOCR: Sankrit OCR Tool",
@@ -35,7 +44,8 @@ export const projects: Project[] = [
   // },
   {
     title: "Invasive Ductal Carcinoma Detection Pipeline",
-    description: "End-to-end ML diagnostic pipeline for classifying cancerous breast-histopathology scans.",
+    description:
+      "End-to-end ML diagnostic pipeline for classifying cancerous breast-histopathology scans.",
     tags: ["Python", "TensorFlow", "Keras", "Clinical Research"],
     links: {
       code: "https://github.com/AdvayChandramouli/IDC-Detection",

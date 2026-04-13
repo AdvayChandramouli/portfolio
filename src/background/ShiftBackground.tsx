@@ -30,9 +30,9 @@ import {
 } from "./palette";
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const SimplexNoise = require("./vendor/simplex-noise.js") as new (
-  r?: () => number
-) => { noise3D: (x: number, y: number, z: number) => number };
+const SimplexNoise = require("./vendor/simplex-noise.js") as new (r?: () => number) => {
+  noise3D: (x: number, y: number, z: number) => number;
+};
 
 const TAU = 2 * Math.PI;
 
@@ -50,9 +50,7 @@ function resolveColor(value: string): string {
   if (value.startsWith("var(")) {
     const match = value.match(/var\((--[a-z-]+)\)/);
     if (match) {
-      const resolved = getComputedStyle(document.documentElement)
-        .getPropertyValue(match[1])
-        .trim();
+      const resolved = getComputedStyle(document.documentElement).getPropertyValue(match[1]).trim();
       return resolved || value;
     }
   }
@@ -84,16 +82,13 @@ export function ShiftBackground() {
     const container = containerRef.current;
     if (!container || typeof window === "undefined") return;
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const speedMult = prefersReducedMotion ? reducedMotionSpeedMultiplier : 1;
 
     const canvasA = document.createElement("canvas");
     const canvasB = document.createElement("canvas");
-    canvasB.style.cssText =
-      "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;";
+    canvasB.style.cssText = "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;";
     container.appendChild(canvasB);
 
     const ctxA = canvasA.getContext("2d");
@@ -101,7 +96,7 @@ export function ShiftBackground() {
     if (!ctxA || !ctxB) return;
 
     const circlePropsLength = circleCount * circlePropCount;
-    let circleProps = new Float32Array(circlePropsLength);
+    const circleProps = new Float32Array(circlePropsLength);
     let simplex: InstanceType<typeof SimplexNoise> | null = null;
     let baseHue = 0;
 
@@ -122,17 +117,13 @@ export function ShiftBackground() {
       const y = rand(h);
       const n = simplex!.noise3D(x * xOff, y * yOff, baseHue * zOff);
       const t = rand(TAU);
-      const speed =
-        (baseSpeed + rand(rangeSpeed)) * speedMult;
+      const speed = (baseSpeed + rand(rangeSpeed)) * speedMult;
       const vx = speed * Math.cos(t);
       const vy = speed * Math.sin(t);
       const life = 0;
       const ttl = baseTTL + rand(rangeTTL);
       const radius = baseRadius + rand(rangeRadius);
-      const colorIndex = Math.min(
-        2,
-        Math.max(0, Math.floor((n * 0.5 + 0.5) * 3))
-      );
+      const colorIndex = Math.min(2, Math.max(0, Math.floor((n * 0.5 + 0.5) * 3)));
       circleProps.set([x, y, vx, vy, life, ttl, radius, colorIndex], i);
     }
 
@@ -153,9 +144,7 @@ export function ShiftBackground() {
       const radius = circleProps[i + 6];
       const colorIndex = Math.floor(circleProps[i + 7]);
 
-      const alpha =
-        alphaMin +
-        fadeInOut(life, ttl) * (alphaMax - alphaMin);
+      const alpha = alphaMin + fadeInOut(life, ttl) * (alphaMax - alphaMin);
       const color = resolvedColors[colorIndex] ?? resolvedColors[0];
       ctxA!.fillStyle = colorWithAlpha(color, alpha);
       ctxA!.beginPath();
@@ -168,10 +157,7 @@ export function ShiftBackground() {
       circleProps[i + 4] = life;
 
       const outOfBounds =
-        x < -radius ||
-        x > canvasA.width + radius ||
-        y < -radius ||
-        y > canvasA.height + radius;
+        x < -radius || x > canvasA.width + radius || y < -radius || y > canvasA.height + radius;
       if (outOfBounds || life > ttl) initCircle(i);
     }
 

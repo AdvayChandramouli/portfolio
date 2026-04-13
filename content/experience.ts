@@ -11,23 +11,21 @@ export const experience: Experience[] = [
     company: "Dell Technologies",
     dates: "Summer 2026",
     bullets: [
-      "Joining Dell ISG this summer — excited to dive into infrastructure and software at scale."
+      "Joining Dell ISG this summer — excited to dive into infrastructure and software at scale.",
     ],
   },
   {
     role: "Undergraduate Research Assistant",
     company: "UT Dallas - Department of Bioengineering",
     dates: "January 2026 - Present",
-    bullets: [
-      "Multinational research using DL for solitary fibrous tumor prognosis."
-    ],
+    bullets: ["Multinational research using DL for solitary fibrous tumor prognosis."],
   },
   {
     role: "Software Development Co-Op",
     company: "Verizon",
     dates: "July 2025 - December 2025",
     bullets: [
-      "Knowledge-retrieval engine, semantic search and automation pipelines for HGC Wireless Network Performance."
+      "Knowledge-retrieval engine, semantic search and automation pipelines for HGC Wireless Network Performance.",
     ],
   },
   {

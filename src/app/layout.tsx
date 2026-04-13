@@ -15,25 +15,17 @@ export const metadata: Metadata = {
   title: "Advay Chandramouli",
   description:
     "Software Engineer specializing in AI/ML. Portfolio showcasing projects, research, and experience.",
-  keywords: [
-    "software engineer",
-    "AI/ML",
-    "machine learning",
-    "portfolio",
-    "Advay Chandramouli",
-  ],
+  keywords: ["software engineer", "AI/ML", "machine learning", "portfolio", "Advay Chandramouli"],
   authors: [{ name: "Advay Chandramouli", url: "https://advaychandramouli.com" }],
   openGraph: {
     title: "Advay Chandramouli",
-    description:
-      "Portfolio showcasing software engineering, AI/ML projects, and research.",
+    description: "Portfolio showcasing software engineering, AI/ML projects, and research.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Advay Chandramouli",
-    description:
-      "Portfolio showcasing software engineering, AI/ML projects, and research.",
+    description: "Portfolio showcasing software engineering, AI/ML projects, and research.",
   },
 };
 
