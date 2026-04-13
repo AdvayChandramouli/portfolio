@@ -13,7 +13,7 @@ export function Projects() {
         {projects.map((project) => (
           <article
             key={project.title}
-            className="group p-6 bg-glass-bg backdrop-blur-md border border-glass-border rounded-xl shadow-glass transition-all duration-300 ease-out hover:bg-glass-bg-hover hover:border-glass-border-hover hover:shadow-glass hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+            className="group p-6 bg-glass-bg backdrop-blur-md glass-backdrop-md border border-glass-border rounded-xl shadow-glass transition-all duration-300 ease-out hover:bg-glass-bg-hover hover:border-glass-border-hover hover:shadow-glass hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
           >
             <h3 className="font-sans text-lg font-medium text-foreground mb-2">{project.title}</h3>
             <p className="font-serif text-muted text-[1.05rem] leading-relaxed mb-4">

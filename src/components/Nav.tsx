@@ -63,7 +63,7 @@ export function Nav() {
 
   return (
     <nav
-      className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/80"
+      className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm glass-backdrop-sm border-b border-border/80"
       role="navigation"
       aria-label="Main navigation"
     >

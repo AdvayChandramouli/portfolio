@@ -40,3 +40,15 @@ a:focus-visible,
 button:focus-visible {
   @apply outline-2 outline-offset-2 outline-accent-2;
 }
+
+@layer utilities {
+  .glass-backdrop-sm {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .glass-backdrop-md {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}

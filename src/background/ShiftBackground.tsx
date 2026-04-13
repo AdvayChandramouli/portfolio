@@ -86,6 +86,7 @@ export function ShiftBackground() {
 
     const speedMult = prefersReducedMotion ? reducedMotionSpeedMultiplier : 1;
 
+    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
     const canvasA = document.createElement("canvas");
     const canvasB = document.createElement("canvas");
     canvasB.style.cssText = "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;";
@@ -99,6 +100,7 @@ export function ShiftBackground() {
     const circleProps = new Float32Array(circlePropsLength);
     let simplex: InstanceType<typeof SimplexNoise> | null = null;
     let baseHue = 0;
+    const blurStrength = isMobileViewport ? Math.max(20, Math.floor(blurAmount * 0.6)) : blurAmount;
 
     const resolvedColors = glowColors.map((c) => resolveColor(c));
 
@@ -161,22 +163,30 @@ export function ShiftBackground() {
       if (outOfBounds || life > ttl) initCircle(i);
     }
 
+    function getViewportSize() {
+      const vv = window.visualViewport;
+      if (vv) {
+        return { width: Math.floor(vv.width), height: Math.floor(vv.height) };
+      }
+      return { width: window.innerWidth, height: window.innerHeight };
+    }
+
     function resize() {
-      const { innerWidth, innerHeight } = window;
-      canvasA.width = innerWidth;
-      canvasA.height = innerHeight;
+      const { width, height } = getViewportSize();
+      canvasA.width = width;
+      canvasA.height = height;
       if (canvasB.parentElement) {
         ctxB!.drawImage(canvasA, 0, 0);
       }
-      canvasB.width = innerWidth;
-      canvasB.height = innerHeight;
+      canvasB.width = width;
+      canvasB.height = height;
       ctxB!.drawImage(canvasA, 0, 0);
     }
 
     function render() {
       ctxB!.clearRect(0, 0, canvasB.width, canvasB.height);
       ctxB!.save();
-      ctxB!.filter = `blur(${blurAmount}px)`;
+      ctxB!.filter = `blur(${blurStrength}px)`;
       ctxB!.drawImage(canvasA, 0, 0);
       ctxB!.restore();
     }
@@ -192,19 +202,13 @@ export function ShiftBackground() {
     initCircles();
     rafRef.current = requestAnimationFrame(draw);
 
-    const handleResize = () => {
-      const { innerWidth, innerHeight } = window;
-      canvasA.width = innerWidth;
-      canvasA.height = innerHeight;
-      canvasB.width = innerWidth;
-      canvasB.height = innerHeight;
-      ctxB!.drawImage(canvasA, 0, 0);
-    };
-
+    const handleResize = () => resize();
     window.addEventListener("resize", handleResize);
+    window.visualViewport?.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.visualViewport?.removeEventListener("resize", handleResize);
       cancelAnimationFrame(rafRef.current);
       if (canvasB.parentElement) canvasB.remove();
     };
@@ -218,9 +222,10 @@ export function ShiftBackground() {
         position: "fixed",
         inset: 0,
         width: "100%",
-        height: "100%",
+        height: "100dvh",
+        minHeight: "100vh",
         pointerEvents: "none",
-        zIndex: -1,
+        zIndex: 0,
         background: `linear-gradient(180deg, var(--shift-gradient-from, #faf9f6) 0%, var(--shift-gradient-to, #e8e8e8) 100%)`,
       }}
       aria-hidden

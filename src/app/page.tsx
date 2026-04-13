@@ -20,13 +20,13 @@ export default function Home() {
             <p className="font-serif text-xl text-muted">{site.tagline}</p>
           </div>
           {site.avatar && (
-            <div className="mt-6 md:mt-0 flex-shrink-0">
+            <div className="mt-8 mb-2 mx-auto md:mb-0 md:mx-0 md:mt-0 flex-shrink-0">
               <Image
                 src={site.avatar}
                 alt={site.name}
                 width={192}
                 height={192}
-                className="aspect-square w-28 h-28 md:w-44 md:h-44 rounded-xl md:rounded-2xl object-cover border border-border shadow-lg"
+                className="aspect-square w-36 h-36 md:w-44 md:h-44 rounded-xl md:rounded-2xl object-cover border border-border shadow-lg"
                 priority
                 unoptimized={site.avatar.endsWith(".svg")}
               />
