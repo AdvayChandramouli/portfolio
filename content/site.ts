@@ -3,6 +3,7 @@ import type { SiteConfig } from "@/lib/types";
 export const site: SiteConfig = {
   name: "Advay Chandramouli",
   tagline: "SWE, AI/ML & HCI",
+  url: "https://advaychandramouli.com",
   avatar: "/hero/headshot.jpg",
   hero: {
     positioning:

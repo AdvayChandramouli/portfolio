@@ -8,6 +8,8 @@ export interface HeroContent {
 export interface SiteConfig {
   name: string;
   tagline: string;
+  /** Canonical deployed portfolio URL (webring, OG, metadata). */
+  url: string;
   avatar?: string;
   hero: HeroContent;
   links: {
