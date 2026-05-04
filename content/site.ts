@@ -7,18 +7,14 @@ export const site: SiteConfig = {
   hero: {
     positioning:
       "Building thoughtful software at the intersection of machine learning and human-computer interaction.",
-    ctas: [
-      { label: "View projects", href: "#projects" },
-      { label: "Get in touch", href: "#contact" },
-    ],
     about:
-      "I'm a software engineer drawn to problems where intelligent systems meet real human workflows. I enjoy turning research ideas into tools people can actually use, and I care a lot about how the experience feels along the way.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus urna eu feugiat tincidunt. Curabitur placerat, velit nec interdum luctus, lectus urna cursus nibh, eget porta risus nibh eu tellus.",
+    aboutImage: "/hero/aboutme.jpg",
     interests: [
-      "Currently: applied ML research",
-      "Time-series forecasting",
-      "Computer vision",
-      "Human-centered design",
-      "Always learning",
+      "Traveling and uncovering new cultures",
+      "Nature trails & national parks",
+      "Street photography",
+      "Film & world cinema",
     ],
   },
   links: {

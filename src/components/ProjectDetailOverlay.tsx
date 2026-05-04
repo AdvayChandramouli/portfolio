@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import type { Project } from "@/lib/types";
 
@@ -97,20 +96,17 @@ export function ProjectDetailOverlay({
 
           <div className="p-6 sm:p-8 pr-14">
             <div
-              className={`flex flex-col gap-8 ${project.image ? "md:flex-row md:gap-10 md:items-stretch" : ""}`}
+              className={`flex flex-col gap-8 ${project.image ? "md:flex-row md:items-start md:gap-10" : ""}`}
             >
               {project.image ? (
-                <figure className="w-full shrink-0 space-y-3 md:w-[44%] md:max-w-none">
-                  <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-muted-subtle md:aspect-auto md:min-h-[280px]">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} preview`}
-                      fill
-                      sizes="(min-width: 768px) 560px, 100vw"
-                      className="object-cover"
-                      unoptimized={project.image.endsWith(".svg")}
-                    />
-                  </div>
+                <figure className="w-full shrink-0 space-y-3 md:w-[44%] md:max-w-none md:self-start">
+                  {/* Intrinsic height so the panel tracks the asset; cap very tall images in the viewport. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element -- natural dimensions for layout */}
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="h-auto max-h-[min(75vh,720px)] w-full rounded-xl border border-border bg-muted-subtle object-contain"
+                  />
                   {project.imageCaption ? (
                     <figcaption className="font-serif text-sm text-muted leading-relaxed text-center md:text-left">
                       {project.imageCaption}
@@ -127,13 +123,10 @@ export function ProjectDetailOverlay({
                   {project.title}
                 </h3>
                 <p className="font-serif text-[1.05rem] text-muted leading-relaxed">
-                  {project.description}
+                  {project.detailedDescription?.trim()
+                    ? project.detailedDescription
+                    : project.description}
                 </p>
-                {project.detailedDescription ? (
-                  <p className="font-serif text-[1.05rem] text-muted leading-relaxed">
-                    {project.detailedDescription}
-                  </p>
-                ) : null}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span

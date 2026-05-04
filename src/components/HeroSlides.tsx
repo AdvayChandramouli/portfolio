@@ -70,43 +70,23 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
                 {site.name}
               </h1>
               <p className="font-serif text-xl text-muted mb-4">{site.tagline}</p>
-              <p className="font-serif text-[1.05rem] text-muted leading-relaxed mb-6 max-w-prose">
+              <p className="font-serif text-[1.05rem] text-muted leading-relaxed max-w-prose">
                 {site.hero.positioning}
               </p>
-              {site.hero.ctas.length > 0 && (
-                <div className="flex flex-wrap gap-3 font-sans text-sm">
-                  {site.hero.ctas.map((cta, i) => {
-                    const isPrimary = i === 0;
-                    return (
-                      <a
-                        key={cta.href}
-                        href={cta.href}
-                        target={cta.external ? "_blank" : undefined}
-                        rel={cta.external ? "noopener noreferrer" : undefined}
-                        className={
-                          isPrimary
-                            ? "inline-flex items-center px-4 py-2 rounded-md bg-accent text-white hover:bg-accent-hover transition-colors"
-                            : "inline-flex items-center px-4 py-2 rounded-md border border-border text-muted hover:text-accent hover:border-accent/50 transition-colors"
-                        }
-                      >
-                        {cta.label}
-                      </a>
-                    );
-                  })}
-                </div>
-              )}
             </div>
             {site.avatar && (
               <div className="mt-8 mb-2 mx-auto md:mb-0 md:mx-0 md:mt-0 flex-shrink-0">
-                <Image
-                  src={site.avatar}
-                  alt={site.name}
-                  width={192}
-                  height={192}
-                  className="aspect-square w-36 h-36 md:w-44 md:h-44 rounded-xl md:rounded-2xl object-cover border border-border shadow-lg"
-                  priority
-                  unoptimized={site.avatar.endsWith(".svg")}
-                />
+                <div className="polaroid-image_wrapepr mx-auto md:mx-0">
+                  <Image
+                    src={site.avatar}
+                    alt={site.name}
+                    width={192}
+                    height={192}
+                    className="aspect-square w-36 h-36 md:w-44 md:h-44 object-cover"
+                    priority
+                    unoptimized={site.avatar.endsWith(".svg")}
+                  />
+                </div>
               </div>
             )}
           </div>
@@ -125,24 +105,43 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
           aria-label="Slide 2 of 2: About"
           aria-hidden={index !== 1}
         >
-          <h2 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">
-            A bit about me
-          </h2>
-          <p className="font-serif text-[1.05rem] text-muted leading-relaxed mb-6 max-w-prose">
-            {site.hero.about}
-          </p>
-          {site.hero.interests.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {site.hero.interests.map((label) => (
-                <span
-                  key={label}
-                  className="font-sans text-xs px-2.5 py-1 rounded bg-muted-subtle text-muted"
-                >
-                  {label}
-                </span>
-              ))}
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8">
+            <div className="flex-1 min-w-0">
+              <h2 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">
+                A bit about me
+              </h2>
+              <p className="font-serif text-[1.05rem] text-muted leading-relaxed mb-6 max-w-prose">
+                {site.hero.about}
+              </p>
+              {site.hero.interests.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {site.hero.interests.map((label) => (
+                    <span
+                      key={label}
+                      className="font-sans text-xs px-2.5 py-1 rounded bg-muted-subtle text-muted"
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+            {site.hero.aboutImage && (
+              <div className="mt-8 mx-auto mb-2 md:mb-0 md:mx-0 md:mt-0 flex-shrink-0">
+                <div className="polaroid-image_wrapepr mx-auto md:mx-0">
+                  <Image
+                    src={site.hero.aboutImage}
+                    alt={`${site.name} — casual photo`}
+                    width={192}
+                    height={192}
+                    className="aspect-square w-36 h-36 md:w-44 md:h-44 object-cover"
+                    loading="lazy"
+                    unoptimized={site.hero.aboutImage.endsWith(".svg")}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 

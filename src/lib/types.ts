@@ -1,13 +1,7 @@
-export interface HeroCta {
-  label: string;
-  href: string;
-  external?: boolean;
-}
-
 export interface HeroContent {
   positioning: string;
-  ctas: HeroCta[];
   about: string;
+  aboutImage?: string;
   interests: string[];
 }
 
