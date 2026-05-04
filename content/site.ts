@@ -8,13 +8,14 @@ export const site: SiteConfig = {
     positioning:
       "Building thoughtful software at the intersection of machine learning and human-computer interaction.",
     about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus urna eu feugiat tincidunt. Curabitur placerat, velit nec interdum luctus, lectus urna cursus nibh, eget porta risus nibh eu tellus.",
+      "Having spent my formative years shuffling between India and the United States, I've approached everyday with curiosity and reflection. I’m drawn to new environments—the culture, visuals, and atmosphere—and often find myself seeing things through a cinematic lens. I enjoy being spontaneous, whether that’s exploring a new city or hopping between cafés, but I also value slowing down, staying grounded, and being intentional about my mental well-being.",
     aboutImage: "/hero/aboutme.jpg",
     interests: [
       "Traveling and uncovering new cultures",
       "Nature trails & national parks",
       "Street photography",
       "Film & world cinema",
+      "Sports (Cricket, Basketball, Football)",
     ],
   },
   links: {
