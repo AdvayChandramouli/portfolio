@@ -113,11 +113,7 @@ const contactCards = [
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="scroll-mt-20 pb-[45vh] md:pb-[50vh]"
-      aria-labelledby="contact-heading"
-    >
+    <section id="contact" className="scroll-mt-20" aria-labelledby="contact-heading">
       <h2
         id="contact-heading"
         className="font-sans text-2xl font-bold tracking-tight text-foreground mb-10"

@@ -6,12 +6,15 @@ export const projects: Project[] = [
     description:
       "A full-stack web platform for monitoring emerging trends in public health video forum content.",
     detailedDescription:
-      "A full-stack web platform that allows users to monitor claims and narratives from public health video forum content. It leverages LLMs and Natural-Language Processing (NLP) pipelines to transform raw video data into structured, generalizable insights.",
+      "A full-stack web platform that allows users to monitor narratives and discourse from public health video forum content. It leverages LLMs and Natural-Language Processing (NLP) pipelines to transform raw video data into structured, generalizable insights.",
+    image: "/projects/YTIP_HomePage.png",
+    imageCaption:
+      "Home page of the YouTube Intelligence Platform, outlining video metadata and generated structured insights.",
     tags: [
       "Next.js",
       "Python",
-      "AWS Lambda",
       "Amazon Bedrock",
+      "AWS Lambda",
       "Amazon ECR",
       "Ollama",
       "FastAPI",
@@ -21,7 +24,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/orgs/CS4485-Team-10/repositories",
     },
-    highlight: "Senior Capstone Project, mentored by Dr. Selim Sarac.",
+    highlight: "Senior Design Project,. mentored by Dr. Selim Sarac.",
   },
   {
     title: "BlueBlood",
@@ -29,12 +32,14 @@ export const projects: Project[] = [
       "A research tool for forecasting blood biomarker changes after clinical prescription adminstration.",
     detailedDescription:
       "BlueBlood explores how time-series models can anticipate biomarker changes following prescription administration, giving clinicians an early signal of adverse drug reactions (ADRs). The pipeline ingests raw clinical records from MIMIC-III via Google BigQuery, trains forecasting models in TensorFlow/Keras on AWS SageMaker, and surfaces per-patient predictions through a lightweight research interface.",
+    image: "/projects/BlueBlood_Temp.jpg",
+    imageCaption: "Showcasing BlueBlood at ACM Research Symposium (Spring 2025).",
     tags: [
       "Python",
       "TensorFlow/Keras",
       "AWS SageMaker",
-      "Amazon S3",
       "Amazon EC2",
+      "Amazon S3",
       "Google BigQuery",
     ],
     links: { code: "https://github.com/vaipos/Blue-Blood-ACM-Research" },
