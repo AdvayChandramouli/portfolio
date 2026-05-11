@@ -6,10 +6,10 @@ export const site: SiteConfig = {
   url: "https://advaychandramouli.com",
   avatar: "/hero/headshot.jpg",
   hero: {
-    positioning:
-      "Building thoughtful software at the intersection of machine learning and human-computer interaction.",
+    positioning: "Building at the intersection of machine learning and human-computer interaction.",
     about:
-      "Having spent my formative years shuffling between India and the United States, I've approached everyday with curiosity and reflection. I’m drawn to new environments—the culture, visuals, and atmosphere—and often find myself seeing things through a cinematic lens. I enjoy being spontaneous, whether that’s exploring a new city or hopping between cafés, but I also value slowing down, staying grounded, and being intentional about my mental well-being.",
+      "Growing up between India and the United States gifted me two lenses — and I've never stopped switching between them. I try to approach everyday with curiosity and reflection, whether spontaneously exploring new environments, learning through different cultures or slowing down with intention. The same tenets shape my work and other endeavors. Feel free to take a look!",
+
     aboutImage: "/hero/aboutme.jpg",
     interests: [
       "Traveling and uncovering new cultures",
@@ -25,6 +25,8 @@ export const site: SiteConfig = {
     github: "https://github.com/AdvayChandramouli",
     instagram: "https://instagram.com/advay.chandramouli",
     twitter: "https://twitter.com/advaycmouli",
+    googleScholar: "https://scholar.google.com/citations?user=ZLQg9QEAAAAJ&hl=en",
+    orcid: "https://orcid.org/0009-0009-5491-5218",
   },
   availability: "Here to connect, learn and grow!",
 };

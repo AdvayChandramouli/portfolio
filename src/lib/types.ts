@@ -18,6 +18,8 @@ export interface SiteConfig {
     github: string;
     instagram?: string;
     twitter?: string;
+    googleScholar?: string;
+    orcid?: string;
   };
   availability: string;
 }

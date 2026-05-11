@@ -42,6 +42,74 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
     slideRefs.current[i] = el;
   };
 
+  const carouselNav = (
+    <div className="flex items-center justify-center gap-3 flex-wrap">
+      <button
+        type="button"
+        onClick={prev}
+        aria-label="Previous slide"
+        className="p-1.5 rounded-md text-muted hover:text-accent transition-colors"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <div className="flex items-center">
+        {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => goTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            aria-current={index === i ? "true" : undefined}
+            className="group px-1.5 py-2"
+          >
+            <span
+              className={`block h-1.5 rounded-full transition-all duration-300 ease-out motion-reduce:transition-none ${
+                index === i ? "w-8 bg-accent" : "w-1.5 bg-border group-hover:bg-muted-light"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={next}
+        aria-label="Next slide"
+        className="p-1.5 rounded-md text-muted hover:text-accent transition-colors"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+      <span className="ml-1 font-sans text-xs text-muted-light tabular-nums">
+        {index + 1} / {SLIDE_COUNT}
+      </span>
+    </div>
+  );
+
   return (
     <header
       className="mb-20 md:mb-28"
@@ -75,8 +143,8 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
               </p>
             </div>
             {site.avatar && (
-              <div className="mt-8 mb-2 mx-auto md:mb-0 md:mx-0 md:mt-0 flex-shrink-0">
-                <div className="polaroid-image_wrapepr mx-auto md:mx-0">
+              <div className="mt-8 mb-2 flex w-full flex-shrink-0 flex-col items-center gap-6 md:mb-0 md:mt-0 md:ml-auto md:w-auto">
+                <div className="polaroid-image_wrapepr">
                   <Image
                     src={site.avatar}
                     alt={site.name}
@@ -87,6 +155,7 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
                     unoptimized={site.avatar.endsWith(".svg")}
                   />
                 </div>
+                {carouselNav}
               </div>
             )}
           </div>
@@ -127,8 +196,8 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
               )}
             </div>
             {site.hero.aboutImage && (
-              <div className="mt-8 mx-auto mb-2 md:mb-0 md:mx-0 md:mt-0 flex-shrink-0">
-                <div className="polaroid-image_wrapepr mx-auto md:mx-0">
+              <div className="mt-8 mb-2 flex w-full flex-shrink-0 flex-col items-center gap-6 md:mb-0 md:mt-0 md:ml-auto md:w-auto">
+                <div className="polaroid-image_wrapepr">
                   <Image
                     src={site.hero.aboutImage}
                     alt={`${site.name} — casual photo`}
@@ -139,77 +208,11 @@ export function HeroSlides({ site }: { site: SiteConfig }) {
                     unoptimized={site.hero.aboutImage.endsWith(".svg")}
                   />
                 </div>
+                {carouselNav}
               </div>
             )}
           </div>
         </div>
-      </div>
-
-      {/* Navigation */}
-      <div className="mt-8 flex items-center gap-3">
-        <button
-          type="button"
-          onClick={prev}
-          aria-label="Previous slide"
-          className="p-1.5 rounded-md text-muted hover:text-accent transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-        </button>
-        <div className="flex items-center">
-          {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => goTo(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={index === i ? "true" : undefined}
-              className="group px-1.5 py-2"
-            >
-              <span
-                className={`block h-1.5 rounded-full transition-all duration-300 ease-out motion-reduce:transition-none ${
-                  index === i ? "w-8 bg-accent" : "w-1.5 bg-border group-hover:bg-muted-light"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
-        <button
-          type="button"
-          onClick={next}
-          aria-label="Next slide"
-          className="p-1.5 rounded-md text-muted hover:text-accent transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </button>
-        <span className="ml-1 font-sans text-xs text-muted-light tabular-nums">
-          {index + 1} / {SLIDE_COUNT}
-        </span>
       </div>
     </header>
   );
