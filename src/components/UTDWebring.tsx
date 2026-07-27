@@ -17,8 +17,6 @@ export function UTDWebring() {
     <div className="inline-flex items-center gap-1 rounded-2xl border border-glass-border bg-glass-bg px-2 py-1 font-sans text-xs font-normal leading-none text-muted shadow-glass backdrop-blur-md glass-backdrop-md transition-[background-color,border-color,box-shadow] duration-300 ease-out hover:bg-glass-bg-hover hover:border-glass-border-hover hover:shadow-glass motion-reduce:transition-none">
       <a
         href={ringHref("prev")}
-        target="_blank"
-        rel="noopener noreferrer"
         className={`-mx-px inline-flex shrink-0 select-none px-1 py-0.5 ${linkMuted}`}
         aria-label="Previous site in UTD ECS Webring"
       >
@@ -26,8 +24,6 @@ export function UTDWebring() {
       </a>
       <a
         href={ringHref()}
-        target="_blank"
-        rel="noopener noreferrer"
         className={`-mx-px inline-flex shrink-0 items-center px-1 py-0.5 group ${linkMuted}`}
         aria-label="UTD ECS Webring"
       >
@@ -48,8 +44,6 @@ export function UTDWebring() {
       </a>
       <a
         href={ringHref("next")}
-        target="_blank"
-        rel="noopener noreferrer"
         className={`-mx-px inline-flex shrink-0 select-none px-1 py-0.5 ${linkMuted}`}
         aria-label="Next site in UTD ECS Webring"
       >
