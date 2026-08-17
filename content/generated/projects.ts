@@ -1,0 +1,74 @@
+import type { Project } from "@/lib/types";
+
+export const projects: Project[] = [
+  {
+    title: "YouTube Intelligence Platform",
+    description:
+      "A full-stack web platform for monitoring emerging trends in public health video forum content.",
+    tags: [
+      "Next.js",
+      "Python",
+      "Amazon Bedrock",
+      "AWS Lambda",
+      "Amazon ECR",
+      "Ollama",
+      "FastAPI",
+      "Supabase",
+      "Render",
+    ],
+    links: {
+      code: "https://github.com/orgs/CS4485-Team-10/repositories",
+    },
+    detailedDescription:
+      "A full-stack web platform that allows users to monitor narratives and discourse from public health video forum content. It leverages LLMs and Natural-Language Processing (NLP) pipelines to transform raw video data into structured, generalizable insights.",
+    image: "/projects/YTIP_HomePage.png",
+    imageCaption:
+      "Home page of the YouTube Intelligence Platform, outlining video metadata and generated structured insights.",
+    highlight: "Senior Design Project,. mentored by Dr. Selim Sarac.",
+  },
+  {
+    title: "BlueBlood: Blood Biomarker Forecasting Tool",
+    description:
+      "A research tool for forecasting blood biomarker changes after clinical prescription adminstration.",
+    tags: [
+      "Python",
+      "TensorFlow/Keras",
+      "AWS SageMaker",
+      "Amazon EC2",
+      "Amazon S3",
+      "Google BigQuery",
+    ],
+    links: {
+      code: "https://github.com/vaipos/Blue-Blood-ACM-Research",
+    },
+    detailedDescription:
+      "BlueBlood explores how time-series models can anticipate biomarker changes following prescription administration, giving clinicians an early signal of adverse drug reactions (ADRs). The pipeline ingests raw clinical records from MIMIC-III via Google BigQuery, trains forecasting models in TensorFlow/Keras on AWS SageMaker, and surfaces per-patient predictions through a lightweight research interface.",
+    image: "/projects/BlueBlood_Temp.jpg",
+    imageCaption: "Showcasing BlueBlood at ACM Research Symposium (Spring 2025).",
+  },
+  {
+    title: "Invasive Ductal Carcinoma (IDC) Detection",
+    description:
+      "End-to-end ML diagnostic pipeline for classifying cancerous breast-histopathology scans.",
+    tags: ["Python", "TensorFlow", "Keras", "Clinical Research"],
+    links: {
+      code: "https://github.com/AdvayChandramouli/IDC-Detection",
+    },
+    detailedDescription:
+      "A convolutional pipeline that processes whole-slide histopathology patches and flags regions consistent with invasive ductal carcinoma. The project covers the full lifecycle: dataset preparation, augmentation, model training in TensorFlow/Keras, and evaluation against held-out clinical samples.",
+    image: "/projects/IDC-Detection-Poster.jpg",
+    imageCaption: "Project poster, nominated for AI4ALL's Research Symposium.",
+  },
+  {
+    title: "SafeDrive",
+    description: "Full-stack mobile application for distracted-driving risk mitigation.",
+    tags: ["Flutter", "Dart", "Computer Vision", "YOLOv5", "Firebase"],
+    links: {
+      code: "https://github.com/acm-projects/SafeDrive",
+    },
+    detailedDescription:
+      "SafeDrive pairs an on-device computer vision model with a Flutter mobile app to detect distracted-driving behaviors in real time. A YOLOv5 detector classifies driver state from the front-facing camera, while Firebase syncs trip metadata and alerts so drivers and trusted contacts can review risk patterns over time.",
+    image: "/projects/SafeDrive.jpg",
+    imageCaption: "Team SafeDrive at ACM Projects Presentation Night (Fall 2023).",
+  },
+];
