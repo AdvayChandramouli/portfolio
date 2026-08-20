@@ -14,9 +14,14 @@
   --border: #e5e5e5;
   --background-hover: rgba(255, 255, 255, 0.6);
 
-  /* Shift background gradient (cream → silver) */
-  --shift-gradient-from: #faf9f6;
-  --shift-gradient-to: #e8e8e8;
+  /* Page ground — palette aligned with Shift field (indigo #4f46e5, teal #00A19B) */
+  --ground-stock: #faf9f6;
+  --ground-surface: #ecedf1;
+  --ground-lit-rgb: 255, 253, 248;
+  --ground-teal-rgb: 0, 161, 155;
+  --ground-indigo-rgb: 79, 70, 229;
+  --ground-teal-strength: 1;
+  --ground-indigo-strength: 1;
 
   /* Liquid Glass card tokens */
   --glass-bg: rgba(250, 249, 246, 0.65);
@@ -42,7 +47,167 @@ button:focus-visible {
 }
 
 @layer components {
-  /* Polaroid frame + paper grain (::before). Class spelling matches project convention. */
+  .page-ground {
+    --ground-grain-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23g)' opacity='0.5'/%3E%3C/svg%3E");
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    isolation: isolate;
+    pointer-events: none;
+    background-color: var(--ground-stock);
+    background-image: linear-gradient(176deg, #fcfbf8 0%, #f8f7f3 46%, var(--ground-surface) 100%);
+  }
+
+  @media (min-width: 1100px) {
+    .page-ground {
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(var(--ground-lit-rgb), 0) 0%,
+          rgba(var(--ground-lit-rgb), 0) calc(50% - 660px),
+          rgba(var(--ground-lit-rgb), 0.55) calc(50% - 340px),
+          rgba(var(--ground-lit-rgb), 0.72) 50%,
+          rgba(var(--ground-lit-rgb), 0.55) calc(50% + 340px),
+          rgba(var(--ground-lit-rgb), 0) calc(50% + 660px),
+          rgba(var(--ground-lit-rgb), 0) 100%
+        ),
+        linear-gradient(176deg, #fcfbf8 0%, #f8f7f3 46%, var(--ground-surface) 100%);
+    }
+  }
+
+  .page-ground::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--ground-grain-tile);
+    background-repeat: repeat;
+    background-size: 128px 128px;
+    opacity: 0.1;
+    mix-blend-mode: multiply;
+  }
+
+  /* Oversized + blurred to match Shift canvas softness (desktopField.blurPx ≈ 44). */
+  .page-ground-bloom {
+    position: absolute;
+    inset: -32%;
+    filter: blur(44px);
+    -webkit-filter: blur(44px);
+  }
+
+  /* Primary blooms — alpha tuned to Shift desktopField (0.16–0.32), split across two layers per ink. */
+  .page-ground-bloom-teal {
+    opacity: var(--ground-teal-strength);
+    background: radial-gradient(
+      54% 72% at 76% 36%,
+      rgba(var(--ground-teal-rgb), 0.3) 0%,
+      rgba(var(--ground-teal-rgb), 0.16) 32%,
+      rgba(var(--ground-teal-rgb), 0.06) 52%,
+      rgba(var(--ground-teal-rgb), 0) 78%
+    );
+  }
+
+  .page-ground-bloom-teal-secondary {
+    background: radial-gradient(
+      48% 64% at 18% 72%,
+      rgba(var(--ground-teal-rgb), 0.22) 0%,
+      rgba(var(--ground-teal-rgb), 0.1) 36%,
+      rgba(var(--ground-teal-rgb), 0.04) 56%,
+      rgba(var(--ground-teal-rgb), 0) 80%
+    );
+  }
+
+  .page-ground-bloom-indigo {
+    opacity: var(--ground-indigo-strength);
+    background: radial-gradient(
+      56% 74% at 24% 54%,
+      rgba(var(--ground-indigo-rgb), 0.28) 0%,
+      rgba(var(--ground-indigo-rgb), 0.15) 32%,
+      rgba(var(--ground-indigo-rgb), 0.055) 52%,
+      rgba(var(--ground-indigo-rgb), 0) 78%
+    );
+  }
+
+  .page-ground-bloom-indigo-secondary {
+    background: radial-gradient(
+      46% 62% at 82% 22%,
+      rgba(var(--ground-indigo-rgb), 0.2) 0%,
+      rgba(var(--ground-indigo-rgb), 0.095) 36%,
+      rgba(var(--ground-indigo-rgb), 0.035) 56%,
+      rgba(var(--ground-indigo-rgb), 0) 80%
+    );
+  }
+
+  @media (max-width: 767px) {
+    .page-ground {
+      --ground-teal-strength: 0.95;
+      --ground-indigo-strength: 0.9;
+    }
+
+    .page-ground-bloom {
+      filter: blur(40px);
+      -webkit-filter: blur(40px);
+    }
+
+    .page-ground-bloom-teal {
+      background: radial-gradient(
+        58% 40% at 88% 14%,
+        rgba(var(--ground-teal-rgb), 0.26) 0%,
+        rgba(var(--ground-teal-rgb), 0.11) 38%,
+        rgba(var(--ground-teal-rgb), 0) 76%
+      );
+    }
+
+    .page-ground-bloom-teal-secondary {
+      background: radial-gradient(
+        52% 38% at 12% 86%,
+        rgba(var(--ground-teal-rgb), 0.2) 0%,
+        rgba(var(--ground-teal-rgb), 0.085) 40%,
+        rgba(var(--ground-teal-rgb), 0) 78%
+      );
+    }
+
+    .page-ground-bloom-indigo {
+      background: radial-gradient(
+        60% 42% at 10% 82%,
+        rgba(var(--ground-indigo-rgb), 0.24) 0%,
+        rgba(var(--ground-indigo-rgb), 0.1) 40%,
+        rgba(var(--ground-indigo-rgb), 0) 78%
+      );
+    }
+
+    .page-ground-bloom-indigo-secondary {
+      background: radial-gradient(
+        54% 40% at 90% 18%,
+        rgba(var(--ground-indigo-rgb), 0.18) 0%,
+        rgba(var(--ground-indigo-rgb), 0.075) 42%,
+        rgba(var(--ground-indigo-rgb), 0) 80%
+      );
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .page-ground-bloom-teal,
+    .page-ground-bloom-teal-secondary {
+      will-change: transform;
+      animation: ground-breathe-teal 68s ease-in-out infinite;
+    }
+
+    .page-ground-bloom-indigo,
+    .page-ground-bloom-indigo-secondary {
+      will-change: transform;
+      animation: ground-breathe-indigo 91s ease-in-out infinite;
+    }
+
+    .page-ground-bloom-teal-secondary {
+      animation-delay: -21s;
+    }
+
+    .page-ground-bloom-indigo-secondary {
+      animation-delay: -37s;
+    }
+  }
+
   .polaroid-image_wrapepr {
     --polaroid-grain-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23t)' opacity='0.45'/%3E%3C/svg%3E");
     display: inline-block;
@@ -87,6 +252,26 @@ button:focus-visible {
     .polaroid-image_wrapepr img {
       filter: contrast(1.06) saturate(0.9) brightness(1.03) sepia(0.04);
     }
+  }
+}
+
+@keyframes ground-breathe-teal {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.6%, -3.2%, 0) scale(1.07);
+  }
+}
+
+@keyframes ground-breathe-indigo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.06);
+  }
+  50% {
+    transform: translate3d(-1.8%, 3.4%, 0) scale(1);
   }
 }
 
