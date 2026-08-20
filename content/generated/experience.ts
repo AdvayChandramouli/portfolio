@@ -2,11 +2,11 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Incoming Software Engineer Intern",
+    role: "Software Engineer Intern",
     company: "Dell Technologies",
-    dates: "Summer 2026",
+    dates: "May 2026 - August 2026",
     bullets: [
-      "Joining Dell ISG this summer \u2014 excited to dive into infrastructure and software at scale.",
+      "AI-assisted alert noise reduction, observability, and automation for Developer Ready Platform (DRP) microservices.",
     ],
   },
   {

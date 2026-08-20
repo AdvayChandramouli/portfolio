@@ -2,6 +2,17 @@ import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    title: "StateOfMind",
+    description:
+      "A privacy-first macOS menubar app that turns spoken thoughts into structured journal entries.",
+    tags: ["Swift", "SwiftUI", "Whisper", "Ollama", "SwiftData", "macOS"],
+    links: {
+      code: "https://github.com/AdvayChandramouli/StateOfMind",
+    },
+    detailedDescription:
+      "StateOfMind is a quiet, menubar-native journaling app for macOS. Hold a key, speak, and release \u2014 the app transcribes your thoughts locally (Whisper when configured, Apple Speech as fallback), then uses Ollama to clean up the text, tag themes, and analyze sentiment. All data stays on disk in SwiftData with no cloud sync or account required. A menubar dashboard tracks streaks and word counts, and a 988 safety banner surfaces when high-risk signals are detected in recent entries.",
+  },
+  {
     title: "YouTube Intelligence Platform",
     description:
       "A full-stack web platform for monitoring emerging trends in public health video forum content.",
