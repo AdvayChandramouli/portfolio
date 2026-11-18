@@ -2,6 +2,38 @@ import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    title: "Flare",
+    description:
+      "A night-shift console that turns produced-water telemetry into a repair plan a technician can run from a phone or Ray-Ban Meta glasses.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Swift",
+      "Gemini",
+      "TimescaleDB",
+      "Meta Wearables SDK",
+      "Photon",
+      "ElevenLabs",
+    ],
+    links: {
+      code: "https://github.com/Siriapps/HackUTD-26",
+    },
+    detailedDescription:
+      "Full-stack application, built at HackUTD 2026 for EOG Resources' Track, that reads facility telemetry and forecasts failures with a cost-effective solution. Field technicians are notified using Photon, with a recommended plan.  ElevenLabs acts as the night-time voice agent, to provide them with a briefing of the outage. These diagnostics are transmitted from TigerData (TimescaleDB) to Gemini 3.8 Live, where technicians are guided through the repair plan from their Wearable Devices (Meta RayBans) with runbooks and operator handoff documentation autonomously created in the background.",
+    highlight: "Winner of MLH Best Use of Tiger Data at HackUTD 2026",
+  },
+  {
+    title: "ATLAS",
+    description:
+      "Multimodal deep learning for U.S. data center classification from satellite imagery and environmental features.",
+    tags: ["Python", "Amazon S3", "Multimodal AI", "ResNet-18", "SmallCNN", "Google Earth Engine"],
+    links: {
+      code: "https://github.com/acm-research-f26/ATLAS",
+    },
+    detailedDescription:
+      "Fall 2026 ACM Research project applying multimodal deep learning to classify data centers and estimate operational scale from high-resolution satellite imagery and structured environmental and infrastructure features. A triple-encoder architecture combines ResNet-18 image embeddings, SmallCNN for USGS DEMs with an MLP over tabular inputs, trained on AWS with a four-way ablation study.",
+  },
+  {
     title: "StateOfMind",
     description:
       "A privacy-first macOS menubar app that turns spoken thoughts into structured journal entries.",
@@ -10,7 +42,7 @@ export const projects: Project[] = [
       code: "https://github.com/AdvayChandramouli/StateOfMind",
     },
     detailedDescription:
-      "StateOfMind is a quiet, menubar-native journaling app for macOS. Hold a key, speak, and release \u2014 the app transcribes your thoughts locally (Whisper when configured, Apple Speech as fallback), then uses Ollama to clean up the text, tag themes, and analyze sentiment. All data stays on disk in SwiftData with no cloud sync or account required. A menubar dashboard tracks streaks and word counts, and a 988 safety banner surfaces when high-risk signals are detected in recent entries.",
+      "Menu-bar journaling app for macOS. Hold a key, speak, and release \u2014 the app transcribes your thoughts locally (Whisper/Apple Speech), then uses Ollama to clean up the text, tag themes, and analyze sentiment. All data stays on disk in SwiftData with no cloud sync or account required. A menubar dashboard tracks streaks and word counts, and a 988 safety banner surfaces when high-risk signals are detected in recent entries.",
   },
   {
     title: "YouTube Intelligence Platform",
@@ -35,10 +67,10 @@ export const projects: Project[] = [
     image: "/projects/YTIP_HomePage.png",
     imageCaption:
       "Home page of the YouTube Intelligence Platform, outlining video metadata and generated structured insights.",
-    highlight: "Senior Design Project,. mentored by Dr. Selim Sarac.",
+    highlight: "Senior Capstone Design Project, mentored by Dr. Selim Sarac.",
   },
   {
-    title: "BlueBlood: Blood Biomarker Forecasting Tool",
+    title: "BlueBlood",
     description:
       "A research tool for forecasting blood biomarker changes after clinical prescription adminstration.",
     tags: [

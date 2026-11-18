@@ -12,7 +12,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Undergraduate Research Assistant",
     company: "UT Dallas - Department of Bioengineering",
-    dates: "January 2026 - Present",
+    dates: "January 2026 - June 2026",
     bullets: ["Multinational research using DL for solitary fibrous tumor prognosis."],
   },
   {
